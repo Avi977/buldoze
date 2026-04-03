@@ -17,8 +17,7 @@ jobs:
           port: ${{ secrets.VPS_PORT }}
           script: |
             cd /home/avi/buldoze
-            git fetch origin master
-            git reset --hard origin/master
+            git pull origin master
             npm install --production
             sudo systemctl restart buldoze
             sleep 2
