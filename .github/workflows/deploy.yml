@@ -19,6 +19,7 @@ jobs:
             cd /home/avi/buldoze
             git pull origin master
             npm install --production
+            npm rebuild better-sqlite3 2>/dev/null || true
             sudo systemctl restart buldoze
             sleep 2
             curl -sf http://localhost:3002/health && echo "Deploy OK" || echo "Deploy FAILED"
